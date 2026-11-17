@@ -28,67 +28,108 @@
     </h2>
 
 
-<section class="bg-slate-900 border border-slate-800 rounded-xl p-6 mb-8">
+    <section class="bg-slate-900 border border-slate-800 rounded-xl p-6 mb-8">
 
-  <h3 class="text-xl font-semibold mb-5">
-    Cadastrar novo herói
-  </h3>
+      <h3 class="text-xl font-semibold mb-5">
+        Cadastrar novo herói
+      </h3>
 
-  <form id="heroForm" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <form id="heroForm" class="grid grid-cols-1 md:grid-cols-2 gap-4">
 
-    <div>
-      <label class="block text-sm mb-2" for="name">
-        Nome do herói
-      </label>
-      <input
-        type="text"
-        id="name"
-        placeholder="Ex: Homem-Aranha"
-        class="w-full bg-slate-800 border border-slate-700 rounded-lg p-3 text-white"
-      >
-    </div>
+      <div>
+        <label class="block text-sm mb-2" for="name">
+          Nome do herói
+        </label>
+        <input
+          type="text"
+          id="name"
+          placeholder="Ex: Homem-Aranha"
+          class="w-full bg-slate-800 border border-slate-700 rounded-lg p-3 text-white"
+        >
+      </div>
 
-    <div>
-      <label class="block text-sm mb-2" for="power">
-        Poder
-      </label>
-      <input
+      <div>
+        <label class="block text-sm mb-2" for="power">
+          Poder
+        </label>
+        <input
         type="text"
         id="power"
         placeholder="Ex: Lançar teias"
         class="w-full bg-slate-800 border border-slate-700 rounded-lg p-3 text-white"
-      >
+        >
+      </div>
+
+      <div class="md:col-span-2">
+        <label class="block text-sm mb-2" for="description">
+          Descrição
+        </label>
+        <textarea
+          id="description"
+          rows="3"
+          placeholder="Descreva o herói..."
+          class="w-full bg-slate-800 border border-slate-700 rounded-lg p-3 text-white"
+        ></textarea>
+      </div>
+
+      <div class="md:col-span-2">
+        <button
+          type="submit"
+          class="bg-purple-600 hover:bg-purple-700 rounded-lg px-6 py-3 font-semibold">
+          Cadastrar herói
+        </button>
+      </div>
+
+      </form>
+
+    </section>
+    
+
+  <section class="mt-8">
+
+    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-5">
+      <div>
+        <h3 class="text-2xl font-bold">
+          Heróis cadastrados
+        </h3>
+        <p class="text-slate-400 text-sm mt-1">
+          Gerencie os personagens registrados no sistema.
+        </p>
+      </div>
+
+      
+      <a href="/herois.html" class="bg-purple-600/20 text-purple-300 px-4 py-2 rounded-lg text-sm hover:bg-purple-600/40 transition">
+        Lista de heróis
+      </a>
+
     </div>
 
-    <div class="md:col-span-2">
-      <label class="block text-sm mb-2" for="description">
-        Descrição
-      </label>
-      <textarea
-        id="description"
-        rows="3"
-        placeholder="Descreva o herói..."
-        class="w-full bg-slate-800 border border-slate-700 rounded-lg p-3 text-white"
-      ></textarea>
+    <div id="heroesList" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+
+      <div class="bg-slate-900 border border-slate-800 rounded-xl p-5">
+        <h4 class="text-lg font-bold">Homem-Aranha</h4>
+        <p class="text-purple-400 text-sm mt-1">Lançar teias</p>
+        <p class="text-slate-400 mt-3 text-sm">
+          Herói conhecido por sua agilidade e sentido aranha.
+        </p>
+        <div class="flex gap-2 mt-5">
+          <button class="bg-blue-600 px-4 py-2 rounded-lg text-sm">
+            Editar
+          </button>
+          <button class="bg-red-600 px-4 py-2 rounded-lg text-sm">
+            Excluir
+          </button>
+        </div>
+      </div>
+
     </div>
 
-    <div class="md:col-span-2">
-      <button
-        type="submit"
-        class="bg-purple-600 hover:bg-purple-700 rounded-lg px-6 py-3 font-semibold"
-      >
-        Cadastrar herói
-      </button>
-    </div>
-
-  </form>
-
-</section>
+  </section>
 
 
   </main>
 
   <script type="module" src="/script.js"></script>
-</body>
+  </body>
 
 </html>
