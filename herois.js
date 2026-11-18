@@ -18,6 +18,7 @@ async function carregarHeroes() {
 
     } catch (error) {
         console.error("Erro ao carregar heróis:", error);
+        heroesList.className = "text-black";
         heroesList.textContent = "Erro ao carregar o catálogo.";
     }
 }
@@ -46,7 +47,7 @@ function atualizarCatalogo() {
         const card = document.createElement("div");
 
         card.className =
-            "bg-slate-900 border border-slate-800 rounded-2xl p-6 hover:border-purple-500 transition";
+            "bg-slate-800 border border-slate-800 rounded-2xl p-6 hover:border-purple-500 transition";
 
         const nome = document.createElement("h3");
         nome.className = "text-xl font-bold text-white";

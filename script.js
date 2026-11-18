@@ -75,7 +75,7 @@ async function carregarHeroes() {
             const card = document.createElement("div");
 
             card.className =
-                "bg-slate-900 border border-slate-800 rounded-2xl p-6 hover:border-purple-500 transition";
+                "bg-slate-800 border border-slate-800 rounded-2xl p-6 hover:border-purple-500 transition";
 
             const nome = document.createElement("h4");
             nome.className = "text-xl font-bold";
@@ -111,6 +111,7 @@ async function carregarHeroes() {
     } catch (error) {
         console.error("Erro ao listar heróis:", error);
         heroesList.textContent = "Não foi possível carregar os heróis.";
+        heroesList.className = "text-black";
     }
 }
 
