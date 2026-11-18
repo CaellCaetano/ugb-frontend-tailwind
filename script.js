@@ -45,6 +45,7 @@ heroForm.addEventListener("submit", async (event) => {
 async function carregarHeroes() {
     const heroesList = document.getElementById("heroesList");
     const totalHeroes = document.getElementById("totalHeroes");
+    const totalUniverses = document.getElementById("totalUniverses");
 
     try {
         const response = await fetch("/api/heroes");
@@ -58,6 +59,12 @@ async function carregarHeroes() {
         heroesList.innerHTML = "";
 
         totalHeroes.textContent = heroes.length;
+
+        const universes = [...new Set(
+            heroes.map(hero => hero.universe.trim().toLowerCase())
+        )];
+
+        totalUniverses.textContent = universes.length;
 
         if (heroes.length === 0) {
             heroesList.textContent = "Nenhum herói cadastrado.";
@@ -107,7 +114,6 @@ async function carregarHeroes() {
     }
 }
 
-// PUT - EDITAR TODOS OS DADOS DO HERÓI
 async function editarHero(hero) {
     const name = prompt("Novo nome:", hero.name);
     if (name === null) return;
@@ -151,8 +157,6 @@ async function editarHero(hero) {
     }
 }
 
-
-// PATCH - ALTERAR SOMENTE O PODER
 async function alterarPoder(hero) {
     const power = prompt("Digite o novo poder:", hero.power);
 
